@@ -2,5 +2,5 @@
 # Each line is a file pattern followed by one or more owners.
 
 /src/  @joshidiptiPFG
-Readme.md @joshidiptiPFG
+README.md @joshidiptiPFG
 *.xml  @joshidiptiPFG
