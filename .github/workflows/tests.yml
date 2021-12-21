@@ -14,4 +14,4 @@ jobs:
        with: 
             fetch-depth: 2
      - run: echo "FOO=$(git diff --name-only HEAD~ HEAD)" >> $GITHUB_ENV
-     - run: echo ${{ env.FOO }}
+     - run: echo ${{ env.OO }}
