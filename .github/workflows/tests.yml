@@ -13,5 +13,5 @@ jobs:
      - uses: actions/checkout@v2
        with: 
             fetch-depth: 2
-     - run: echo "FOO=$(git diff --name-only HEAD~ HEAD)" >> $GITHUB_ENV
+     - run: echo "FOO=$(git diff --name-only EAD~ HEAD)" >> $GITHUB_ENV
      - run: echo ${{ env.FOO }}
