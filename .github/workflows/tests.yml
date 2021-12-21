@@ -1,25 +1,17 @@
-name: Tests
-
+name: container
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
 
+ 
 jobs:
-  build:
-
+  logstash-docker:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [12.x]
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm ci
-    - run: npm test
+     - uses: actions/checkout@v2
+       with: 
+            fetch-depth: 2
+     - run: echo "FOO=$(git diff --name-only HEAD~ HEAD)" >> $GITHUB_ENV
+     - run: echo ${{ env.FOO }}
